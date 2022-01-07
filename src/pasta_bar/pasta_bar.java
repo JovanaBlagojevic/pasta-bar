@@ -20,40 +20,10 @@ public class pasta_bar {
 		while (!nazivSastojaka.equals(presekPorudzbine)) {
 			System.out.println("Izaberite sastojak za pastu: ");
 			nazivSastojaka = s.nextLine();
-			racun = vracanjeSastojaka(sastojci, nazivSastojaka) + racun;
+	
 		}
 		System.out.println("Unesite vas broj telefona: ");
 		brojTel = s.next();
-		boolean provera = provera(stalneMusterije, brojTel);
-		if (provera) {
-			racun = (int) (racun - (racun * 0.1));
-			System.out.println(
-					"Kao nasa stalna musterija ostvarili ste popust od 10% i Vas racun iznosi " + racun + " dinara.");
-			System.out.print("Prijatno i dodjite nam ponovo!");
-		} else {
-			System.out.println("Vas racun je " + racun + " dinara.");
-			System.out.print("Prijatno i dodjite nam ponovo!");
-		}
-	}
-
-	public static int vracanjeSastojaka(String[] sastojci, String nazivSastojka) {
-		int[] cene = { 50, 60, 120, 120, 140, 100, 100, 100, 80, 50, 80, 80, 80, 50, 50, 20 };
-		for (int i = 0; i < sastojci.length; i++) {
-			if (sastojci[i].equals(nazivSastojka)) {
-				return cene[i];
-			}
-		}
-		return 0;
-	}
-
-	public static boolean provera(String[] stalneMusterije, String brojTel) {
-		for (int i = 0; i < stalneMusterije.length; i++) {
-			if (stalneMusterije[i].equals(brojTel)) {
-				System.out.println(i);
-				return true;
-			}
-		}
-		return false;
 	}
 
 }
