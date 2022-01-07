@@ -25,6 +25,16 @@ public class pasta_bar {
 		}
 		System.out.println("Unesite vas broj telefona: ");
 		brojTel = s.next();
+		boolean provera = provera(stalneMusterije, brojTel);
+		if (provera) {
+			racun = (int) (racun - (racun * 0.1));
+			System.out.println(
+					"Kao nasa stalna musterija ostvarili ste popust od 10% i Vas racun iznosi " + racun + " dinara.");
+			System.out.print("Prijatno i dodjite nam ponovo!");
+		} else {
+			System.out.println("Vas racun je " + racun + " dinara.");
+			System.out.print("Prijatno i dodjite nam ponovo!");
+		}
 	}
 
 	public static int vracanjeSastojaka(String[] sastojci, String nazivSastojka) {
@@ -36,4 +46,15 @@ public class pasta_bar {
 		}
 		return 0;
 	}
+
+	public static boolean provera(String[] stalneMusterije, String brojTel) {
+		for (int i = 0; i < stalneMusterije.length; i++) {
+			if (stalneMusterije[i].equals(brojTel)) {
+				System.out.println(i);
+				return true;
+			}
+		}
+		return false;
+	}
+
 }
